@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Boost",
+                    "type": "Value",
+                    "id": "5c8af2c2-be91-4618-a2ac-7a9fcb2770f1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -50,7 +59,7 @@
                 {
                     "name": "negative",
                     "id": "ee1f156c-5271-4060-9d8d-b90ffe2291b6",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -61,13 +70,24 @@
                 {
                     "name": "positive",
                     "id": "0306a897-65e8-40c0-b0c9-a807fab3490a",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "ae78de2e-a344-43f3-ae77-5135d0a320f0",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
