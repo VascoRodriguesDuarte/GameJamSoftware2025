@@ -4,12 +4,14 @@ public class AirCollider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<MovementWithAir>().InAirPublic();
+        Debug.Log("here");
+        other.GetComponent<Movement>().ChangeTerrain(Terrain.Type.Air);
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        other.GetComponent<MovementWithAir>().OutAirPublic();
+        //other.GetComponent<Movement>().LeaveAir();
     }
 
     
