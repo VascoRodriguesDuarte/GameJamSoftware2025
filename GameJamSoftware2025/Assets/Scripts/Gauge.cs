@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class Gauge : MonoBehaviour
@@ -9,11 +10,33 @@ public class Gauge : MonoBehaviour
     [SerializeField, Range(0,1)]
     float gaugeValue;
 
+    [SerializeField, Range(0,1)] public float boostGaugeCost { get; private set; } = 0.2f;
+
+    [SerializeField, Range(0,1)] public float boostGaugeGain { get; private set; } = 0.10f;
+
+    [SerializeField, Range(0,1)] public float boostCooldownPercent { get; private set; } = 0.10f;
+
     float originalWidth;
     /*
         originalWidth - 1
         ?             - gaugeValue
     */
+    private enum GaugeUpdateState {
+        Increasing,
+        Decreasing,
+        Stagnant
+    }
+    private GaugeUpdateState updateMode = GaugeUpdateState.Stagnant;
+
+    public void SetIncreasing() {
+        updateMode = GaugeUpdateState.Increasing;
+    }
+    public void SetDecreasing() {
+        updateMode = GaugeUpdateState.Decreasing;
+    }
+    public void SetStagnant() {
+        updateMode = GaugeUpdateState.Stagnant;
+    }
 
     public bool IsEmpty() {
         return gaugeValue <= 0f;
@@ -27,7 +50,11 @@ public class Gauge : MonoBehaviour
         return gaugeValue > amount;
     }
 
-    public void IncreaseGauge(float amount) {
+    public bool IsMax() {
+        return gaugeValue >= 1;
+    }
+
+    private void IncreaseGauge(float amount) {
         if (gaugeValue < 1) {
             float newgauge = gaugeValue + amount;
             gaugeValue = Math.Clamp(newgauge, 0f, 1f);
@@ -35,7 +62,7 @@ public class Gauge : MonoBehaviour
         }
     }
 
-    public void DecreaseGauge(float amount) {
+    private void DecreaseGauge(float amount) {
         if (gaugeValue > 0) {
             float newgauge = gaugeValue - amount;
             gaugeValue = Math.Clamp(newgauge, 0f, 1f);
@@ -57,6 +84,29 @@ public class Gauge : MonoBehaviour
     void Awake() {
         originalWidth = visual.rect.width;
         setVisualWidth();
+    }
+
+    public void GaugeUpdate() {
+
+        switch (updateMode) {
+            case GaugeUpdateState.Increasing:
+                IncreaseGauge(boostGaugeGain*Time.deltaTime);
+                if (IsMax()) {
+                    updateMode = GaugeUpdateState.Stagnant;
+                }
+                break;
+            case GaugeUpdateState.Decreasing:
+                DecreaseGauge(boostGaugeCost*Time.deltaTime);
+                if (IsEmpty()) {
+                    updateMode = GaugeUpdateState.Stagnant;
+                }
+                break;
+            case GaugeUpdateState.Stagnant:
+                break;
+            default:
+                Debug.Log("Uh Oh");
+                break;
+        } 
     }
 
 }

@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private List<TerrainMovement> terrains;
 
+    [SerializeField] private Gauge boostGauge;
+
     private Terrain.Type currentTerrain = Terrain.Type.Land;
 
     public void ChangeTerrain(Terrain.Type type) {
@@ -30,6 +32,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate() {
         getCurrentMovement().ToUpdate();
+        boostGauge.GaugeUpdate();
     }
 
     public void OnRotate(InputValue value) {
@@ -51,6 +54,7 @@ public class Movement : MonoBehaviour
 
     public void Awake() {
         TerrainMovement.player = player;
+        TerrainMovement.boostGauge = boostGauge;
     }
 
 }

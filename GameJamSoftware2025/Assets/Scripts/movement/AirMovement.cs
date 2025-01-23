@@ -9,7 +9,7 @@ public class MovementWithAir : TerrainMovement
     [SerializeField] private float rotateAirValue = 5f;
     [SerializeField] private float burstCooldown = 2f;
     [SerializeField] private float airSpeed = 2f;
-    private float rotationInput;
+    private float rotationValue;
     private float burstTimer = 0.0f;
     private float airSpeedPrivate = 1f;
     private bool airTime;
@@ -23,15 +23,15 @@ public class MovementWithAir : TerrainMovement
 
         Debug.Log(dot);
 
-        if(dot > 0f) {rotationInput = -rotateAirValue; Debug.Log("Right looking, go down");}
-        else{rotationInput = rotateAirValue; Debug.Log("Left looking, go down");}
+        if(dot > 0f) {rotationValue = -rotateAirValue; Debug.Log("Right looking, go down");}
+        else{rotationValue = rotateAirValue; Debug.Log("Left looking, go down");}
     }
 
     private void OutAir()
     {
         airTime = false;
         airSpeedPrivate = 1f;
-        rotationInput = 0f;
+        rotationValue = 0f;
     }
 
     public override void Enter()
@@ -52,17 +52,17 @@ public class MovementWithAir : TerrainMovement
 
         if(dot > 0.99f && airTime) 
         {
-            rotationInput = 0f;
+            rotationValue = 0f;
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
         }
 
-        transform.Rotate(0f, 0f, rotationInput * rotateSpeed * Time.deltaTime);    }
+        transform.Rotate(0f, 0f, rotationValue * rotateSpeed * Time.deltaTime);    }
 
     public override void Rotate(float value)
     {
         if(!airTime)
         {
-            rotationInput = value;
+            rotationValue = value;
         }
     }
 
