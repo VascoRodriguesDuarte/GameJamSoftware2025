@@ -56,6 +56,10 @@ public class Movement : MonoBehaviour
         TerrainMovement.player = player;
         TerrainMovement.boostGauge = boostGauge;
     }
+    public void SpeedMultiplier(float value)
+    {
 
+        getCurrentMovement().extraSpeed += value;
+    }
 }
 

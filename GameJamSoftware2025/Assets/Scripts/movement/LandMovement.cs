@@ -8,7 +8,9 @@ public class LandMovement : TerrainMovement
     [SerializeField] private float burstCooldown = 2f;
     [SerializeField] private float boostSpeedModifier = 10f;
     [SerializeField] private float brakeSpeedModifier = -3f;
-
+    [SerializeField] private float speedBoostLost = 0.003f;
+    
+    
     private float currentAdditionalSpeed = 0f;
 
     private float burstTimer = 0.0f;
@@ -17,11 +19,12 @@ public class LandMovement : TerrainMovement
     public override void ToUpdate()
     {
 
-        transform.Translate(Vector2.up * (defaultSpeed + currentAdditionalSpeed) * Time.deltaTime);
+        transform.Translate(Vector2.up * (defaultSpeed + currentAdditionalSpeed)* extraSpeed * Time.deltaTime);
 
         transform.Rotate(Vector3.forward, rotationInput * rotateSpeed * Time.deltaTime);
 
         BoostUpdate();
+        LooseExtraSpeed();
 
     }
 
@@ -125,5 +128,14 @@ public class LandMovement : TerrainMovement
         } else {
             StopBraking();
         }    
+    }
+    private void LooseExtraSpeed()
+    {
+        if (extraSpeed > 1f) {
+            extraSpeed -= speedBoostLost;
+            extraSpeed = Mathf.Max(extraSpeed, 1f);
+        }
+
+        //Debug.Log(extraSpeed);
     }
 }

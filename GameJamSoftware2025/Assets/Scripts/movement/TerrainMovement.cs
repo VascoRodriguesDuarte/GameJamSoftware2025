@@ -3,6 +3,7 @@ using UnityEngine;
 abstract public class TerrainMovement: MonoBehaviour
 {
     [SerializeField] protected float defaultSpeed = 5f;
+    public float extraSpeed = 1f;
 
     static public Rigidbody2D player = default;
 

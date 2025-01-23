@@ -54,7 +54,7 @@ public class Gauge : MonoBehaviour
         return gaugeValue >= 1;
     }
 
-    private void IncreaseGauge(float amount) {
+    public void IncreaseGauge(float amount) {
         if (gaugeValue < 1) {
             float newgauge = gaugeValue + amount;
             gaugeValue = Math.Clamp(newgauge, 0f, 1f);
