@@ -129,7 +129,7 @@ public class LandMovement : TerrainMovement
             StopBraking();
         }    
     }
-    private void LooseExtraSpeed()
+    public override void LooseExtraSpeed()
     {
         if (extraSpeed > 1f) {
             extraSpeed -= speedBoostLost;

@@ -16,11 +16,13 @@ abstract public class TerrainMovement: MonoBehaviour
     abstract public void Burst();
     abstract public void Boost(float value); //add wrapper
     abstract public void Brake(float value); //add wrapper
+    abstract public void LooseExtraSpeed();
 
     protected bool boosting = false;
     protected bool braking = false;
 
     protected float rotationInput;
+    
 
     void Awake() {
         Enter();

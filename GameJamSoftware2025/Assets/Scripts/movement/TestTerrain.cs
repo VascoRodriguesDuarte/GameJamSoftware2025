@@ -36,5 +36,9 @@ public class TestTerrain : TerrainMovement
     {
         throw new System.NotImplementedException();
     }
+    public override void LooseExtraSpeed()
+    {
+        throw new System.NotImplementedException();
+    }
 
 }
