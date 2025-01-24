@@ -56,6 +56,29 @@ public class Movement : MonoBehaviour
         TerrainMovement.player = player;
         TerrainMovement.boostGauge = boostGauge;
     }
+    public void SpeedMultiplier(float value)
+    {
 
+        getCurrentMovement().extraSpeed += value;
+    }
+
+    public void CheckSpeed()
+    {
+        getCurrentMovement().StunSpeed();
+    }
+
+    public void CheckBurst()
+    {
+        getCurrentMovement().StunBurst();
+    }
+
+    public void ApplyExplosionSlow(float value)
+    {
+        getCurrentMovement().extraSpeed -= value;
+        if(getCurrentMovement().extraSpeed < 0f)
+        {
+            getCurrentMovement().extraSpeed = 0f;
+        }
+    }
 }
 

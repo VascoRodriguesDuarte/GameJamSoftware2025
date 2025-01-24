@@ -36,5 +36,19 @@ public class TestTerrain : TerrainMovement
     {
         throw new System.NotImplementedException();
     }
+    public override void ManageExtraSpeed()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void StunSpeed()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void StunBurst()
+    {
+        throw new System.NotImplementedException();
+    }
 
 }

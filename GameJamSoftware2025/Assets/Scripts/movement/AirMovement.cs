@@ -9,6 +9,7 @@ public class MovementWithAir : TerrainMovement
     [SerializeField] private float rotateAirValue = 5f;
     [SerializeField] private float burstCooldown = 2f;
     [SerializeField] private float airSpeed = 2f;
+    [SerializeField] private float speedBoostLost = 0.003f;
     private float rotationValue;
     private float burstTimer = 0.0f;
     private float airSpeedPrivate = 1f;
@@ -25,6 +26,7 @@ public class MovementWithAir : TerrainMovement
 
         if(dot > 0f) {rotationValue = -rotateAirValue; Debug.Log("Right looking, go down");}
         else{rotationValue = rotateAirValue; Debug.Log("Left looking, go down");}
+        ManageExtraSpeed();
     }
 
     private void OutAir()
@@ -92,5 +94,24 @@ public class MovementWithAir : TerrainMovement
     public override void Brake(float value)
     {
         throw new NotImplementedException();
+    }
+    public override void ManageExtraSpeed()
+    {
+        if (extraSpeed > 1f) {
+            extraSpeed -= speedBoostLost;
+            extraSpeed = Mathf.Max(extraSpeed, 1f);
+        }
+
+        //Debug.Log(extraSpeed);
+    }
+
+    public override void StunSpeed()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void StunBurst()
+    {
+        throw new System.NotImplementedException();
     }
 }
