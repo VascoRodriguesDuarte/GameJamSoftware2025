@@ -61,5 +61,24 @@ public class Movement : MonoBehaviour
 
         getCurrentMovement().extraSpeed += value;
     }
+
+    public void CheckSpeed()
+    {
+        getCurrentMovement().StunSpeed();
+    }
+
+    public void CheckBurst()
+    {
+        getCurrentMovement().StunBurst();
+    }
+
+    public void ApplyExplosionSlow(float value)
+    {
+        getCurrentMovement().extraSpeed -= value;
+        if(getCurrentMovement().extraSpeed < 0f)
+        {
+            getCurrentMovement().extraSpeed = 0f;
+        }
+    }
 }
 

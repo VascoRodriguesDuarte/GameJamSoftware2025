@@ -38,4 +38,19 @@ public class ResourceManager : MonoBehaviour
     {
         gameObject.GetComponentInChildren<Gauge>().IncreaseGauge(gaugeRefill);
     }
+
+    public void BoostEnemy()
+    {
+        gameObject.GetComponent<Movement>().CheckSpeed();
+    }
+
+    public void BurstEnemy()
+    {
+        gameObject.GetComponent<Movement>().CheckBurst();
+    }
+
+    public void ExplodeEnemy()
+    {
+        gameObject.GetComponent<Movement>().CheckSpeed();
+    }
 }

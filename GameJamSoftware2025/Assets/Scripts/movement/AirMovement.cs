@@ -26,7 +26,7 @@ public class MovementWithAir : TerrainMovement
 
         if(dot > 0f) {rotationValue = -rotateAirValue; Debug.Log("Right looking, go down");}
         else{rotationValue = rotateAirValue; Debug.Log("Left looking, go down");}
-        LooseExtraSpeed();
+        ManageExtraSpeed();
     }
 
     private void OutAir()
@@ -95,7 +95,7 @@ public class MovementWithAir : TerrainMovement
     {
         throw new NotImplementedException();
     }
-    public override void LooseExtraSpeed()
+    public override void ManageExtraSpeed()
     {
         if (extraSpeed > 1f) {
             extraSpeed -= speedBoostLost;
@@ -103,5 +103,15 @@ public class MovementWithAir : TerrainMovement
         }
 
         //Debug.Log(extraSpeed);
+    }
+
+    public override void StunSpeed()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void StunBurst()
+    {
+        throw new System.NotImplementedException();
     }
 }
