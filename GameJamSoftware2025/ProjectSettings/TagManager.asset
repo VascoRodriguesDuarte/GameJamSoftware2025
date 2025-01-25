@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Air
   - Dentine
-  - 
+  - Terrain
   - 
   - 
   - 
@@ -40,6 +40,18 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1362256957
+    locked: 0
+  - name: UnderTerrain
+    uniqueID: 2718550679
+    locked: 0
+  - name: Terrain
+    uniqueID: 3700904983
+    locked: 0
+  - name: Entities
+    uniqueID: 2223252325
     locked: 0
   m_RenderingLayers:
   - Default

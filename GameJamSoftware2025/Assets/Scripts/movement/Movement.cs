@@ -80,5 +80,9 @@ public class Movement : MonoBehaviour
             getCurrentMovement().extraSpeed = 0f;
         }
     }
+
+    public Transform getTransform() {
+        return transform;
+    }
 }
 

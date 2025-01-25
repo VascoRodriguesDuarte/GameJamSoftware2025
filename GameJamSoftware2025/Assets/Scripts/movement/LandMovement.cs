@@ -40,7 +40,7 @@ private void Awake()
     {
 
         velocity = (transform.position - pos).magnitude / Time.deltaTime;
-    pos = transform.position;
+        pos = transform.position;
 
         if(!stun)
         {
@@ -130,7 +130,7 @@ private void Awake()
     }
     public override void Boost(float value)
     {
-        if (value == 1 && boostGauge.IsOver(boostGauge.boostCooldownPercent) && !braking) {
+        if (value == 1 && boostGauge.IsOverCooldown() && !braking) {
             StartBoosting();
         } else {
             StopBoosting();

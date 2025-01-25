@@ -10,11 +10,11 @@ public class Gauge : MonoBehaviour
     [SerializeField, Range(0,1)]
     float gaugeValue;
 
-    [SerializeField, Range(0,1)] public float boostGaugeCost { get; private set; } = 0.2f;
+    [SerializeField, Range(0,1)] private float boostGaugeCost = 0.2f;
 
-    [SerializeField, Range(0,1)] public float boostGaugeGain { get; private set; } = 0.10f;
+    [SerializeField, Range(0,1)] private float boostGaugeGain = 0.10f;
 
-    [SerializeField, Range(0,1)] public float boostCooldownPercent { get; private set; } = 0.10f;
+    [SerializeField, Range(0,1)] private float boostCooldownPercent = 0.10f;
 
     float originalWidth;
     /*
@@ -48,6 +48,10 @@ public class Gauge : MonoBehaviour
 
     public bool IsOver(float amount) {
         return gaugeValue > amount;
+    }
+
+    public bool IsOverCooldown() {
+        return IsOver(boostCooldownPercent);
     }
 
     public bool IsMax() {
