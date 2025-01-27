@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-    public delegate void PauseFunction(bool isPaused);
+    public delegate void PauseFunction(bool isPaused, bool victory);
     private static PauseManager instance;
     private bool pause;
     private event PauseFunction Pause;
@@ -32,7 +32,7 @@ public class PauseManager : MonoBehaviour
 
         if (Pause != null)
         {
-            Pause(pause);
+            Pause(pause, false);
         }
     }
 

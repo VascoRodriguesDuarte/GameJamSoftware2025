@@ -22,8 +22,8 @@ public class EnemyCollider : MonoBehaviour
             }
             else if (enemy == enemyType.Explode)
             {
-                player.ExplodeEnemy();
                 Debug.Log("Contact Explode Enemy");
+                player.ExplodeEnemy();
             }
 
             Destroy(gameObject);

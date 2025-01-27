@@ -24,8 +24,9 @@ public class ExplodetEnemyExplosion : MonoBehaviour
                 if(Vector3.Distance(player.transform.position, transform.position) <= explosionSize)
                 {
                     player.ApplyExplosionSlow(slowValue);
-                    explosionSet = false;
                 }
+
+                explosionSet = false;
 
             }
 

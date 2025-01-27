@@ -49,12 +49,15 @@ public class PauseController : MonoBehaviour
     /// </summary>
     /// <param name="isPaused"> Value which determines if its going to pause
     /// or unpause.</param>
-    public void Pause(bool isPaused)
+    public void Pause(bool isPaused, bool victory)
     {
         // If the game is getting paused.
         if(isPaused)
         {
-            pauseMenu.SetActive(true);
+            if(!victory)
+            {
+                pauseMenu.SetActive(true);
+            }
 
             // Keeps the current state of the stopped component and stops them.
             foreach(var component in componentsToPause)
