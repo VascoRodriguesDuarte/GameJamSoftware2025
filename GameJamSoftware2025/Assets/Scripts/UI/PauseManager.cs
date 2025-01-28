@@ -5,7 +5,7 @@ public class PauseManager : MonoBehaviour
 {
     public delegate void PauseFunction(bool isPaused, bool victory);
     private static PauseManager instance;
-    private bool pause;
+    public bool Paused { get; private set; }
     private event PauseFunction Pause;
 
     /// <summary>
@@ -28,11 +28,11 @@ public class PauseManager : MonoBehaviour
     public void OnPause()
     {
         //Pause
-        pause = !pause;
+        Paused = !Paused;
 
         if (Pause != null)
         {
-            Pause(pause, false);
+            Pause(Paused, false);
         }
     }
 
