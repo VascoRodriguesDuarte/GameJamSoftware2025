@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class TerrainMovement: MonoBehaviour
@@ -9,8 +11,10 @@ abstract public class TerrainMovement: MonoBehaviour
 
     static public Gauge boostGauge;
 
+    public abstract GameTerrain.MinorType type {get;}
+
     abstract public void ToUpdate();
-    abstract public void Enter();
+    abstract public void Enter(Dictionary<String, Vector2> additional);
     abstract public void Exit();
     abstract public void Rotate(float value);
     abstract public void Burst();
@@ -27,6 +31,6 @@ abstract public class TerrainMovement: MonoBehaviour
     
 
     void Awake() {
-        Enter();
+        Enter(null);
     }
 }

@@ -50,6 +50,9 @@ TagManager:
   - name: Terrain
     uniqueID: 3700904983
     locked: 0
+  - name: Diggable
+    uniqueID: 395561461
+    locked: 0
   - name: Entities
     uniqueID: 2223252325
     locked: 0

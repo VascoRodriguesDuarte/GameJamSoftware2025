@@ -10,7 +10,10 @@ public class Tunnel : MonoBehaviour
     [SerializeField]
     Movement player;
 
-    [SerializeField, Range(100,500)]
+    [SerializeField]
+    TerrainManager TM;
+
+    [SerializeField, Range(100,1000)]
     private int maxPieces = 300;
     private Transform[] pieces;
 
@@ -19,49 +22,69 @@ public class Tunnel : MonoBehaviour
 
     [SerializeField, Range(5,30)]
     public int TicksPerSecond = 20;
+    private float dur;
+
+    private Vector3 Scale;
+
     private float _t = 0f;
     void Update() {
 
-        float dur = 1f / TicksPerSecond;
         _t += Time.deltaTime;
         while(_t >= dur)
         {
             _t -= dur;
-            if (player.GetCurrentTerrain() == Terrain.Type.Land) {
+
+            if (CanDig()) {
                 createPiece();
             }
         }
 
     }
 
-    private bool delete = false;
+    private bool CanDig() {
+        return (GameTerrain.GetMajorType(TM.CurrentTerrain) == GameTerrain.MajorType.Land) && GameTerrain.IsDiggable(TM.CurrentTerrain);
+    }
+
     private void createPiece() {
-        Transform piece = Instantiate(tunnelPrefab);
+        Transform piece = getOrInstantiatePiece();
 
         addPieceToList(piece);
 
         var p = player.getTransform();
-        piece.localScale = p.localScale;
-        piece.position = p.position - p.up*0.75f;
+        if (!passthrough) {
+            piece.localScale = Scale;
+        }
+        piece.position = p.position - p.up*0.70f;
         piece.rotation = p.rotation;
-        piece.SetParent(transform,true);
+        piece.SetParent(transform, true);
     }
 
     private void addPieceToList(Transform piece) {
-    
-        if (delete) {
-            Destroy(pieces[i].gameObject);
-        } 
         pieces[i] = piece;
-        i++;
+        i++;    
         if (i >= maxPieces) {
             i = 0;
-            delete = true;
+        }
+    }
+
+    private bool passthrough = false;
+
+    private Transform getOrInstantiatePiece() {
+        var p = pieces[i];
+        if (p == null) {
+            return Instantiate(tunnelPrefab);
+        } else {
+            if (!passthrough) {
+                passthrough = true;
+            }
+            return p;
         }
     }
 
     private void Awake() {
         pieces = new Transform[maxPieces];
+        dur = 1f / TicksPerSecond;
+        Scale = player.getTransform().localScale;
     }
 
 }

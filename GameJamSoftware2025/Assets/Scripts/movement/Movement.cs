@@ -13,16 +13,18 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Gauge boostGauge;
 
-    private Terrain.Type currentTerrain = Terrain.Type.Land;
+    [SerializeField] private TerrainManager TM;
 
-    public void ChangeTerrain(Terrain.Type type) {
-        Debug.Log("Changing terrain to " + type.ToString());
+    private GameTerrain.MinorType currentTerrain;
+
+    public void ChangeTerrainMovement(GameTerrain.MinorType type, Dictionary<String, Vector2> additional) {
+        //Debug.Log("Changing terrain to " + type.ToString());
         getCurrentMovement().Exit();
         currentTerrain = type;
-        getCurrentMovement().Enter();
+        getCurrentMovement().Enter(additional);
     }
 
-    public Terrain.Type GetCurrentTerrain() {
+    public GameTerrain.MinorType GetCurrentTerrain() {
         return currentTerrain;
     }
 
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
     }
 
     public void OnRotate(InputValue value) {
+        //Debug.Log(terrains[(int)currentTerrain].type);
         getCurrentMovement().Rotate(value.Get<float>());
     }
 
@@ -55,6 +58,7 @@ public class Movement : MonoBehaviour
     public void Awake() {
         TerrainMovement.player = player;
         TerrainMovement.boostGauge = boostGauge;
+        currentTerrain = TM.CurrentTerrain;
     }
     public void SpeedMultiplier(float value)
     {
