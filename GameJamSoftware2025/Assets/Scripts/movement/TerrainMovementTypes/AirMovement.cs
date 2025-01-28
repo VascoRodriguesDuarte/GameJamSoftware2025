@@ -42,11 +42,17 @@ public class AirMovement : TerrainMovement
 
     public override void Enter(Dictionary<String, Vector2> additional)
     {
+        if(boosting) {
+           boostGauge.SetStagnant();
+        }
         InAir();
     }
 
     public override void Exit()
     {
+        if(boosting) {
+            boostGauge.SetDecreasing();
+        }
         OutAir();
     }
 
@@ -66,6 +72,7 @@ public class AirMovement : TerrainMovement
 
     public override void Rotate(float value)
     {
+        rotationInput = value;
         if(!airTime)
         {
             rotationValue = value;
@@ -92,13 +99,23 @@ public class AirMovement : TerrainMovement
 
     public override void Boost(float value)
     {
-        throw new NotImplementedException();
+        if (value == 1 && boostGauge.IsOverCooldown() && !braking && !scheduleBrake) {
+            scheduleBoost = true;
+            Debug.Log("scheduled");
+        } else {
+            scheduleBoost = false;
+        }
     }
 
     public override void Brake(float value)
     {
-        throw new NotImplementedException();
+        if (value == 1 && !boosting && !scheduleBoost) {
+            scheduleBrake = true;
+        } else {
+            scheduleBrake = false;
+        }      
     }
+
     public override void ManageExtraSpeed()
     {
         if (extraSpeed > 1f) {

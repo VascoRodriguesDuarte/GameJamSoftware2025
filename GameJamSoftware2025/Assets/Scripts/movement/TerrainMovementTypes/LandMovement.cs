@@ -8,7 +8,6 @@ public abstract class LandMovement : TerrainMovement
     [SerializeField] protected float burstMultiplier = 1f;
     [SerializeField] protected float burstDamageDuration = 0.5f;
     [SerializeField] protected float rotateSpeed = 50f;
-    
     [SerializeField] protected float burstCooldown = 2f;
     [SerializeField] protected float stunDuration = 1.5f;
     [SerializeField] protected float boostSpeedModifier = 10f;
@@ -16,8 +15,6 @@ public abstract class LandMovement : TerrainMovement
     [SerializeField] protected float speedBoostLost = 0.003f;
     [SerializeField] protected float minEnemySpeed = 1f;
     
-    private float currentAdditionalSpeed = 0f;
-
     private float burstTimer = 0.0f;
 
     private float damageTimer = 0.0f;
@@ -68,23 +65,18 @@ private void Awake()
     }
 
     public override void Enter(Dictionary<String, Vector2> additional)
-    {
-        if (previousBoosting) {
-            StartBoosting();
-        } else if (previousBraking) {
-            StartBraking();
+    {        
+        if (scheduleBoost) {
+            StartBoosting(boostSpeedModifier);
+        }
+        if (scheduleBrake) {
+            StartBraking(brakeSpeedModifier);
         }
     }
 
-    private bool previousBoosting = false;
-    private bool previousBraking = false;
+
     public override void Exit()
     {
-        previousBoosting = boosting;
-        previousBraking = braking;
-        StopBoosting();
-        StopBraking();
-        rotationInput = 0;
     }
 
     public override void Rotate(float value)
@@ -113,59 +105,30 @@ private void Awake()
         }
     }
 
-    private void StopBoosting() {
-        if (boosting) {
-            boostGauge.SetIncreasing();
-            currentAdditionalSpeed -= boostSpeedModifier;
-            boosting = false;
-            Debug.Log("Stopped Boosting");
-        }
-    }
-    private void StartBoosting() {
-        if (!boosting) {
-            boostGauge.SetDecreasing();
-            currentAdditionalSpeed += boostSpeedModifier;
-            boosting = true;
-            Debug.Log("Boosting");
-        }
-    }
+
     public override void Boost(float value)
     {
         if (value == 1 && boostGauge.IsOverCooldown() && !braking) {
-            StartBoosting();
+            StartBoosting(boostSpeedModifier);
         } else {
-            StopBoosting();
+            StopBoosting(boostSpeedModifier);
         }
     }
 
     public void BoostUpdate() {
         if (boosting) {
             if (boostGauge.IsEmpty()) {
-                StopBoosting();         
+                StopBoosting(boostSpeedModifier);         
             };
         }
     }
 
-    private void StopBraking() {
-        if (braking) {
-            currentAdditionalSpeed -= brakeSpeedModifier;
-            braking = false;
-            Debug.Log("Stopped Braking");
-        }
-    }
-    private void StartBraking() {
-        if (!braking) {
-            currentAdditionalSpeed += brakeSpeedModifier;
-            braking = true;
-            Debug.Log("Braking");
-        }
-    }
     public override void Brake(float value)
     {
         if (value == 1 && !boosting) {
-            StartBraking();
+            StartBraking(brakeSpeedModifier);
         } else {
-            StopBraking();
+            StopBraking(brakeSpeedModifier);
         }    
     }
     public override void ManageExtraSpeed()

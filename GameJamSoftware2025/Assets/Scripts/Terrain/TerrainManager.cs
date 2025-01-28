@@ -64,7 +64,7 @@ private int InTunnel = 0;
                 EnterTunnel();
                 return;
             } 
-            Debug.Log("entered "+type.ToString());
+            //Debug.Log("entered "+type.ToString());
             if (GameTerrain.GetMajorType(type) != GameTerrain.MajorType.Solid) {
                 lastEntry = type;
             }
@@ -82,7 +82,7 @@ private int InTunnel = 0;
                 ExitTunnel();
                 return;
             } 
-            Debug.Log("left "+type.ToString());
+            //Debug.Log("left "+type.ToString());
             if (CurrentTerrain == type) { 
                 if (lastEntry == type) {
                     return;

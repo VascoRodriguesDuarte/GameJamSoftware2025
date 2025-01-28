@@ -62,8 +62,7 @@ public class Movement : MonoBehaviour
     }
     public void SpeedMultiplier(float value)
     {
-
-        getCurrentMovement().extraSpeed += value;
+        TerrainMovement.extraSpeed += value;
     }
 
     public void CheckSpeed()
@@ -78,10 +77,10 @@ public class Movement : MonoBehaviour
 
     public void ApplyExplosionSlow(float value)
     {
-        getCurrentMovement().extraSpeed -= value;
-        if(getCurrentMovement().extraSpeed < 0f)
+        TerrainMovement.extraSpeed -= value;
+        if(TerrainMovement.extraSpeed < 0f)
         {
-            getCurrentMovement().extraSpeed = 0f;
+            TerrainMovement.extraSpeed = 0f;
         }
     }
 
