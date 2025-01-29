@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tooth Raul.unity
+    guid: 9f1f7550a588c78309fcd4cc2dbd0b4b
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 86982fcf13b669e449769419d4b7a419
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tooth.unity
     guid: 39271385d2f5dc4ed949641fa8ff7ef9
   m_configObjects:

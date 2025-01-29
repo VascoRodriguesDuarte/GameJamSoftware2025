@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private TerrainManager TM;
 
+    [SerializeField] private Animator animator;
     private GameTerrain.MinorType currentTerrain;
 
     public void ChangeTerrainMovement(GameTerrain.MinorType type, Dictionary<String, Vector2> additional) {
@@ -25,12 +26,18 @@ public class Movement : MonoBehaviour
         return currentTerrain;
     }
 
-    private TerrainMovement getCurrentMovement() {
+    public float GetCurentSpeed() {
+        return getCurrentMovement().CurrentSpeed();
+    }
+
+    public TerrainMovement getCurrentMovement() {
         return terrains[(int)currentTerrain];
     }
 
     private void FixedUpdate() {
-        getCurrentMovement().ToUpdate();
+        TerrainMovement movement = getCurrentMovement();
+        animator.speed = Mathf.Clamp(1+movement.CurrentSpeed()-movement.defaultSpeed,0.25f, 4f);
+        movement.ToUpdate();
         boostGauge.GaugeUpdate();
     }
 

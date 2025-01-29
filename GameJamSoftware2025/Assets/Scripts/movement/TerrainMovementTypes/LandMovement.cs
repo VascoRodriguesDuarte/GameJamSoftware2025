@@ -11,7 +11,7 @@ public abstract class LandMovement : TerrainMovement
     [SerializeField] protected float burstCooldown = 2f;
     [SerializeField] protected float stunDuration = 1.5f;
     [SerializeField] protected float boostSpeedModifier = 10f;
-    [SerializeField] protected float brakeSpeedModifier = 0.6f;
+    [SerializeField, Range(0,1)] protected float brakeSpeedModifier = 0.6f;
     [SerializeField] protected float minEnemySpeed = 1f;
     
     private float burstTimer = 0.0f;

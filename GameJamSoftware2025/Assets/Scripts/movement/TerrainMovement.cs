@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 abstract public class TerrainMovement: MonoBehaviour
 {
-    [SerializeField] protected float defaultSpeed = 5f;
+    [SerializeField] public float defaultSpeed = 5f;
 
     [SerializeField] protected float maxSpeed = 30f;
 
@@ -30,6 +30,7 @@ abstract public class TerrainMovement: MonoBehaviour
 
     protected static float boostSpeed = 0f;
 
+    protected static float brakeModifier = 0f;
 
     protected static float force;
 
@@ -56,7 +57,7 @@ abstract public class TerrainMovement: MonoBehaviour
 
     protected void StopBraking(float modifier) {
         if (braking) {
-            extraSpeed += modifier;
+            brakeModifier += modifier;
             braking = false;
             scheduleBrake = false;
             Debug.Log("Stopped Braking");
@@ -64,7 +65,7 @@ abstract public class TerrainMovement: MonoBehaviour
     }
     protected void StartBraking(float modifier) {
         if (!braking) {
-            extraSpeed -= modifier;
+            brakeModifier -= modifier;
             braking = true;
             scheduleBrake = false;
             Debug.Log("Braking");
@@ -93,12 +94,15 @@ abstract public class TerrainMovement: MonoBehaviour
         if (!boosting) {
             boostSpeed = ReduceLingeringSpeed(boostSpeed, ForceSpeedLoss);
         }
+        if (!braking) {
+            brakeModifier = ReduceLingeringSpeed(brakeModifier, ForceSpeedLoss);
+        }
         previousSpeed = CurrentSpeed();
         return previousSpeed;
     }
 
-    virtual protected float CurrentSpeed() {
-        return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*extraSpeed, 0, maxSpeed);
+    virtual public float CurrentSpeed() {
+        return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*(extraSpeed+brakeModifier), 0, maxSpeed);
     }
     abstract public void ToUpdate();
     abstract public void Enter(Dictionary<String, Vector2> additional);
@@ -122,5 +126,6 @@ abstract public class TerrainMovement: MonoBehaviour
         lingeringSpeed = 0f;
         force = 0f;
         boostSpeed = 0f;
+        brakeModifier = 0f;
     }
 }

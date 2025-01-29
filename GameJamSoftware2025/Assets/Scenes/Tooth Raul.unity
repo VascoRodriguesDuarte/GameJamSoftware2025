@@ -4796,6 +4796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886779161}
   - component: {fileID: 886779162}
+  - component: {fileID: 886779163}
   m_Layer: 0
   m_Name: Tunnel
   m_TagString: Untagged
@@ -4835,6 +4836,23 @@ MonoBehaviour:
   TM: {fileID: 557600098}
   maxPieces: 1000
   TicksPerSecond: 30
+--- !u!114 &886779163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886779160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad38a5d98c26c3fafb8eb47b1a18fb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tunnelPrefab: {fileID: 7060542122385913240, guid: 3955df22cfd0414dbad634ad0c8bbee4, type: 3}
+  player: {fileID: 1228426082}
+  TM: {fileID: 557600098}
+  maxPieces: 300
+  TicksPerSecond: 200
 --- !u!1 &931779694
 GameObject:
   m_ObjectHideFlags: 0
@@ -9160,6 +9178,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724631809}
   m_CullTransparentMesh: 1
+--- !u!95 &1741269084 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 10075646338659862, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
+  m_PrefabInstance: {fileID: 113718189716277117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1775807259
 GameObject:
   m_ObjectHideFlags: 0
@@ -11441,6 +11464,10 @@ PrefabInstance:
       propertyPath: TM
       value: 
       objectReference: {fileID: 557600098}
+    - target: {fileID: 5079221235266665917, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1741269084}
     - target: {fileID: 7419255464616528189, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -11678,7 +11705,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!60 &1748097645493707081
 PolygonCollider2D:
@@ -15943,7 +15970,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!212 &7174998422273960700
 SpriteRenderer:
@@ -17196,7 +17223,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &9145761366562992762
 GameObject:
