@@ -6172,7 +6172,7 @@ Transform:
   m_GameObject: {fileID: 1228426079}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.002007169, w: 0.99999803}
-  m_LocalPosition: {x: 14.9, y: -57.9, z: 0}
+  m_LocalPosition: {x: 15.18, y: -54.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6193,7 +6193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9396ae8fe2ef46641bbc34c0f5976584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1228426084}
   terrains:
   - {fileID: 1228426092}
   - {fileID: 1228426091}
@@ -6361,12 +6360,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   burstMultiplier: 5
   rotateSpeed: 5
   rotateAirValue: 5
   burstCooldown: 2
   airSpeed: 2
-  speedBoostLost: 0.003
+  AirLingeringSpeedLoss: 0.2
+  onExitLoss: 1
 --- !u!61 &1228426087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6426,6 +6430,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   reflectMultiplier: 5
 --- !u!114 &1228426089
 MonoBehaviour:
@@ -6440,6 +6448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   burstMultiplier: 5
   burstDamageDuration: 0.5
   rotateSpeed: 50
@@ -6447,7 +6459,6 @@ MonoBehaviour:
   stunDuration: 1.5
   boostSpeedModifier: 10
   brakeSpeedModifier: -3
-  speedBoostLost: 0.003
   minEnemySpeed: 1
 --- !u!114 &1228426090
 MonoBehaviour:
@@ -6462,6 +6473,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   burstMultiplier: 5
   burstDamageDuration: 0.5
   rotateSpeed: 50
@@ -6469,7 +6484,6 @@ MonoBehaviour:
   stunDuration: 1.5
   boostSpeedModifier: 10
   brakeSpeedModifier: -3
-  speedBoostLost: 0.003
   minEnemySpeed: 1
 --- !u!114 &1228426091
 MonoBehaviour:
@@ -6484,6 +6498,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   burstMultiplier: 5
   burstDamageDuration: 0.5
   rotateSpeed: 50
@@ -6491,7 +6509,6 @@ MonoBehaviour:
   stunDuration: 1.5
   boostSpeedModifier: 10
   brakeSpeedModifier: -3
-  speedBoostLost: 0.003
   minEnemySpeed: 1
 --- !u!114 &1228426092
 MonoBehaviour:
@@ -6506,6 +6523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
+  speedBoostLost: 0.003
+  ForceSpeedLoss: 0.5
   burstMultiplier: 5
   burstDamageDuration: 0.5
   rotateSpeed: 50
@@ -6513,7 +6534,6 @@ MonoBehaviour:
   stunDuration: 1.5
   boostSpeedModifier: 10
   brakeSpeedModifier: -3
-  speedBoostLost: 0.003
   minEnemySpeed: 10
 --- !u!114 &1228426093
 MonoBehaviour:
@@ -12412,7 +12432,7 @@ Transform:
   m_GameObject: {fileID: 1473485407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.932115, y: -49.900066, z: -20}
+  m_LocalPosition: {x: 15.212115, y: -46.870064, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14255,7 +14275,7 @@ Transform:
   m_GameObject: {fileID: 1890935379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.932115, y: -49.900066, z: -20}
+  m_LocalPosition: {x: 15.212115, y: -46.870064, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

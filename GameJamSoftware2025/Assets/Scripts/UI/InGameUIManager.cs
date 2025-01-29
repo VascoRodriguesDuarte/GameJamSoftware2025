@@ -9,7 +9,7 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private float transitionSpeed;
     [SerializeField] private float transitionTimeSpeed;
 
-    public void ReturnMenu(int sceneLoadNumber)
+    public void LoadScene(int sceneLoadNumber)
     {
         fadeCanvas.SetActive(true);
         StartCoroutine(Transition(sceneLoadNumber));

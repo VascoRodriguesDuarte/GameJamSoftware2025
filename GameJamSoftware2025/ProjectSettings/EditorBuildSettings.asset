@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 86982fcf13b669e449769419d4b7a419
   - enabled: 1
-    path: Assets/Scenes/Tooth.unity
-    guid: 39271385d2f5dc4ed949641fa8ff7ef9
+    path: Assets/Scenes/Tooth V2.unity
+    guid: 94966e1c79de1154e96062237c0fa607
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

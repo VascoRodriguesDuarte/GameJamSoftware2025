@@ -155,6 +155,7 @@ public abstract class LandMovement : TerrainMovement
 
     public override void StunSpeed()
     {
+        Debug.Log("Burst: " + velocity);
         if(velocity >= minEnemySpeed)
         {
             return;
@@ -165,6 +166,7 @@ public abstract class LandMovement : TerrainMovement
 
     public override void StunBurst()
     {
+        Debug.Log("Burst: " + burstDamage);
         if(burstDamage)
         {
             return;
