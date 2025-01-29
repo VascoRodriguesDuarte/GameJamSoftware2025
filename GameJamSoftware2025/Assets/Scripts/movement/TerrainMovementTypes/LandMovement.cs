@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public abstract class LandMovement : TerrainMovement
 {
-    [SerializeField] protected float burstMultiplier = 1f;
+    [SerializeField] protected float burstMultiplier = 5f;
     [SerializeField] protected float burstDamageDuration = 0.5f;
     [SerializeField] protected float rotateSpeed = 50f;
     [SerializeField] protected float burstCooldown = 2f;
