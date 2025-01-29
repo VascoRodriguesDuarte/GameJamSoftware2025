@@ -20,7 +20,7 @@ public class Tunnel : MonoBehaviour
     private int i = 0;
 
 
-    [SerializeField, Range(5,30)]
+    [SerializeField, Range(5,50)]
     public int TicksPerSecond = 20;
     private float dur;
 

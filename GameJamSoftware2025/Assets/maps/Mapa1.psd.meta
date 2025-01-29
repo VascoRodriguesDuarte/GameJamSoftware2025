@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1a6af8dd98520a4efa5e5756e23a5b65
+guid: ade8b72fc216e7dd29556783620abb1c
 importerOverride:
   nativeImporterType: 2089858483
   scriptedImporterType:
@@ -88,7 +88,7 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    spriteID: e0357697aa35262448d07570500222fe
+    spriteID: 5700b0bca753905269472f1aa2cd483e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -100,51 +100,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Enamel
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 11592
-      width: 2907
-      height: 4708
-    spriteID: cc1ee9ca6f8013cf99703b342652f6db
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 11592}
-    spritePosition: {x: 1723, y: 271}
-  - name: Dentin
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 2919
-      y: 11592
-      width: 2204
-      height: 4357
-    spriteID: 28324a6e811f6a29a97a6f943ffd67d8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2919, y: 11592}
-    spritePosition: {x: 2075, y: 277}
-  - name: Pulp
+  - name: Layer 7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -153,10 +109,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 6412
-      y: 1668
+      y: 10976
       width: 1910
       height: 3890
-    spriteID: ce5490a4483528fe993f4b31b5f36082
+    spriteID: 7806f107b1921dc1398b5be23a4551be
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -164,9 +120,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6412, y: 1668}
+    uvTransform: {x: 6412, y: 10976}
     spritePosition: {x: 2213, y: 275}
-  - name: Gum
+  - name: Dentina
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -174,11 +130,55 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4991
+      x: 6412
+      y: 6605
+      width: 2204
+      height: 4363
+    spriteID: e1a058064ee6985f6a329767681d8873
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6412, y: 6605}
+    spritePosition: {x: 2075, y: 271}
+  - name: Enamel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 12820
+      y: 3484
+      width: 2907
+      height: 2445
+    spriteID: 398f51f7bd74551c4882e8e72f2cbff0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12820, y: 3484}
+    spritePosition: {x: 1723, y: 2534}
+  - name: Gengiva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 6412
+      y: 4
       width: 6400
       height: 3472
-    spriteID: 2993028216153c5dbb85f516cef4ab87
+    spriteID: ef27affd54d9af4b69f493bb156e40a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -186,9 +186,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4991}
+    uvTransform: {x: 6412, y: 4}
     spritePosition: {x: 0, y: 172}
-  - name: Bone
+  - name: Osso
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -196,11 +196,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 8471
+      x: 6412
+      y: 3484
       width: 6400
       height: 3113
-    spriteID: 0c50f7157de18fe93b11ff50f8bf09fa
+    spriteID: d640566615da5160ab7112771214a5a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -208,7 +208,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 8471}
+    uvTransform: {x: 6412, y: 3484}
     spritePosition: {x: 0, y: 0}
   - name: Escavado
     originalName: 
@@ -219,10 +219,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 10260
       width: 6400
       height: 4979
-    spriteID: 8bab8660402183859b0e5b5a3cb31dd8
+    spriteID: b6c62547598368fd89a7760ac347cd84
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -230,7 +230,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 10260}
     spritePosition: {x: 0, y: 0}
   - name: Layer 1
     originalName: 
@@ -240,11 +240,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 6412
+      x: 4
       y: 4
       width: 6400
-      height: 1656
-    spriteID: bbdef2ec84e6f165a9af3ac5eadd8a85
+      height: 5120
+    spriteID: 8787a0fac9fb6a14a88b88ad3ba4e517
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,8 +252,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6412, y: 4}
-    spritePosition: {x: 0, y: 3464}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Paper
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5132
+      width: 6400
+      height: 5120
+    spriteID: 8553b6d86312549fcbc90966f094815e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5132}
+    spritePosition: {x: 0, y: 0}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -329,53 +351,53 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
+  - name: Layer 7
+    spriteName: Layer 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7806f107b1921dc1398b5be23a4551be
+    layerID: 0
+    mosaicPosition: {x: 6412, y: 10976}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Dentina
+    spriteName: Dentina
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e1a058064ee6985f6a329767681d8873
+    layerID: -1703020023
+    mosaicPosition: {x: 6412, y: 6605}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Enamel
     spriteName: Enamel
     isGroup: 0
     parentIndex: -1
-    spriteID: cc1ee9ca6f8013cf99703b342652f6db
-    layerID: 0
-    mosaicPosition: {x: 4, y: 11592}
+    spriteID: 398f51f7bd74551c4882e8e72f2cbff0
+    layerID: -77655658
+    mosaicPosition: {x: 12820, y: 3484}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Dentin
-    spriteName: Dentin
+  - name: Gengiva
+    spriteName: Gengiva
     isGroup: 0
     parentIndex: -1
-    spriteID: 28324a6e811f6a29a97a6f943ffd67d8
-    layerID: -1703019960
-    mosaicPosition: {x: 2919, y: 11592}
+    spriteID: ef27affd54d9af4b69f493bb156e40a6
+    layerID: -123677639
+    mosaicPosition: {x: 6412, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Pulp
-    spriteName: Pulp
+  - name: Osso
+    spriteName: Osso
     isGroup: 0
     parentIndex: -1
-    spriteID: ce5490a4483528fe993f4b31b5f36082
-    layerID: 1030553177
-    mosaicPosition: {x: 6412, y: 1668}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Gum
-    spriteName: Gum
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 2993028216153c5dbb85f516cef4ab87
-    layerID: 1575611391
-    mosaicPosition: {x: 4, y: 4991}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Bone
-    spriteName: Bone
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 0c50f7157de18fe93b11ff50f8bf09fa
-    layerID: 1601831860
-    mosaicPosition: {x: 4, y: 8471}
+    spriteID: d640566615da5160ab7112771214a5a3
+    layerID: -23971690
+    mosaicPosition: {x: 6412, y: 3484}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -383,9 +405,9 @@ ScriptedImporter:
     spriteName: Escavado
     isGroup: 0
     parentIndex: -1
-    spriteID: 8bab8660402183859b0e5b5a3cb31dd8
-    layerID: 1364187438
-    mosaicPosition: {x: 4, y: 4}
+    spriteID: b6c62547598368fd89a7760ac347cd84
+    layerID: -1042985170
+    mosaicPosition: {x: 4, y: 10260}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -393,27 +415,27 @@ ScriptedImporter:
     spriteName: Layer 1
     isGroup: 0
     parentIndex: -1
-    spriteID: bbdef2ec84e6f165a9af3ac5eadd8a85
-    layerID: 198205944
-    mosaicPosition: {x: 6412, y: 4}
+    spriteID: 8787a0fac9fb6a14a88b88ad3ba4e517
+    layerID: -7500616
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Paper
-    spriteName: 
+    spriteName: Paper
     isGroup: 0
     parentIndex: -1
-    spriteID: 531ab59e87ffb944b98ada70de046f91
-    layerID: -1903059652
-    mosaicPosition: {x: 0, y: 0}
+    spriteID: 8553b6d86312549fcbc90966f094815e
+    layerID: -1779142660
+    mosaicPosition: {x: 4, y: 5132}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   mosaicPSDLayers: []
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638736283936393840
+  platformSettingsDirtyTick: 638737659732035370
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

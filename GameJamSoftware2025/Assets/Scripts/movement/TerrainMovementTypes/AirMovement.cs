@@ -104,7 +104,8 @@ public class AirMovement : TerrainMovement
         else
         {
             Debug.Log("FAILED burst");
-        }    }
+        }    
+    }
 
     public override void Boost(float value)
     {

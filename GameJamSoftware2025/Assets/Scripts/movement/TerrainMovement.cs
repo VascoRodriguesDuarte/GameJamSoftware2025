@@ -28,6 +28,9 @@ abstract public class TerrainMovement: MonoBehaviour
 
     protected static float lingeringSpeed;
 
+    protected static float boostSpeed = 0f;
+
+
     protected static float force;
 
     protected static float previousSpeed = 0f;
@@ -35,7 +38,7 @@ abstract public class TerrainMovement: MonoBehaviour
     protected void StopBoosting(float modifier) {
         if (boosting) {
             boostGauge.SetIncreasing();
-            currentAdditionalSpeed -= modifier;
+            boostSpeed -= modifier;
             boosting = false;
             scheduleBoost = false;
             Debug.Log("Stopped Boosting");
@@ -44,7 +47,7 @@ abstract public class TerrainMovement: MonoBehaviour
     protected void StartBoosting(float modifier) {
         if (!boosting) {
             boostGauge.SetDecreasing();
-            currentAdditionalSpeed += modifier;
+            boostSpeed += modifier;
             boosting = true;
             scheduleBoost = false;
             Debug.Log("Boosting");
@@ -87,12 +90,15 @@ abstract public class TerrainMovement: MonoBehaviour
     protected float GetCurrentSpeed() {
         lingeringSpeed = ReduceLingeringSpeed(lingeringSpeed, LingeringSpeedLoss);
         force = ReduceLingeringSpeed(force, ForceSpeedLoss);
+        if (!boosting) {
+            boostSpeed = ReduceLingeringSpeed(boostSpeed, ForceSpeedLoss);
+        }
         previousSpeed = CurrentSpeed();
         return previousSpeed;
     }
 
     virtual protected float CurrentSpeed() {
-        return Mathf.Clamp(Mathf.Max((defaultSpeed + currentAdditionalSpeed + force) * extraSpeed, lingeringSpeed), 0, maxSpeed);
+        return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*extraSpeed, 0, maxSpeed);
     }
     abstract public void ToUpdate();
     abstract public void Enter(Dictionary<String, Vector2> additional);
@@ -115,5 +121,6 @@ abstract public class TerrainMovement: MonoBehaviour
         Enter(null);
         lingeringSpeed = 0f;
         force = 0f;
+        boostSpeed = 0f;
     }
 }
