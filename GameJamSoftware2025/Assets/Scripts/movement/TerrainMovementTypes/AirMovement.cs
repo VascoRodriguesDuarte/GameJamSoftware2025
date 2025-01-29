@@ -10,17 +10,22 @@ public class AirMovement : TerrainMovement
     [SerializeField] private float rotateAirValue = 5f;
     [SerializeField] private float burstCooldown = 2f;
     [SerializeField] private float airSpeed = 2f;
-    [SerializeField] private float speedBoostLost = 0.003f;
-    
+    [SerializeField] private float AirLingeringSpeedLoss = 0.2f;
+
+    [SerializeField] private float onExitLoss = 1f;
+
     private float rotationValue;
     private float burstTimer = 0.0f;
     private float airSpeedPrivate = 1f;
     private bool airTime;
 
+    private float initialSpeed;
+
     public override GameTerrain.MinorType type => GameTerrain.MinorType.Air;
 
     private void InAir()
     {
+        initialSpeed = previousSpeed;
         airTime = true;
         airSpeedPrivate = airSpeed;
 
@@ -38,6 +43,9 @@ public class AirMovement : TerrainMovement
         airTime = false;
         airSpeedPrivate = 1f;
         rotationValue = 0f;
+        currentAdditionalSpeed -= onExitLoss;
+        lingeringSpeed = CurrentSpeed();
+        currentAdditionalSpeed += onExitLoss;
     }
 
     public override void Enter(Dictionary<String, Vector2> additional)
@@ -56,9 +64,15 @@ public class AirMovement : TerrainMovement
         OutAir();
     }
 
+    protected override float CurrentSpeed() {
+
+        initialSpeed = ReduceLingeringSpeed(initialSpeed, AirLingeringSpeedLoss);
+        return Mathf.Clamp(Mathf.Max((defaultSpeed+currentAdditionalSpeed) * airSpeedPrivate, initialSpeed), 0, maxSpeed);
+    }
+
     public override void ToUpdate()
     {
-        transform.Translate(Vector2.up * (defaultSpeed * airSpeedPrivate) * Time.deltaTime);
+        transform.Translate(Vector2.up * GetCurrentSpeed() * Time.deltaTime);
 
         float dot = Vector2.Dot(transform.up, Vector2.down);
 
@@ -83,12 +97,7 @@ public class AirMovement : TerrainMovement
     {
         if (Time.time >= burstTimer && !airTime)
         {
-            Vector2 currentUp = transform.up;
-
-            currentUp.x += currentUp.x > 0 ? 1 : -1;
-            currentUp.y += currentUp.y > 0 ? 1 : -1;
-
-            player.AddForce(currentUp*burstMultiplier, ForceMode2D.Impulse);
+            force += burstMultiplier;
             burstTimer = burstCooldown + Time.time;
             Debug.Log("BURSTED");
         }

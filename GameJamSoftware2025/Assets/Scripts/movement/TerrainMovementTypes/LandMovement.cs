@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public abstract class LandMovement : TerrainMovement
 {
-    [SerializeField] protected float burstMultiplier = 5f;
+    [SerializeField] protected float burstMultiplier = 15f;
     [SerializeField] protected float burstDamageDuration = 0.5f;
     [SerializeField] protected float rotateSpeed = 50f;
     [SerializeField] protected float burstCooldown = 2f;
     [SerializeField] protected float stunDuration = 1.5f;
     [SerializeField] protected float boostSpeedModifier = 10f;
-    [SerializeField] protected float brakeSpeedModifier = -3f;
-    [SerializeField] protected float speedBoostLost = 0.003f;
+    [SerializeField] protected float brakeSpeedModifier = 0.6f;
     [SerializeField] protected float minEnemySpeed = 1f;
     
     private float burstTimer = 0.0f;
@@ -29,11 +28,10 @@ public abstract class LandMovement : TerrainMovement
 
     private float velocity;
 
-private void Awake()
-{
-    pos = transform.position;
-}
-    
+    private void Awake()
+    {
+        pos = transform.position;
+    }
 
     public override void ToUpdate()
     {
@@ -43,7 +41,7 @@ private void Awake()
 
         if(!stun)
         {
-            transform.Translate(Vector2.up * (defaultSpeed + currentAdditionalSpeed)* extraSpeed * Time.deltaTime);
+            transform.Translate(Vector2.up * GetCurrentSpeed() * Time.deltaTime);
 
             transform.Rotate(Vector3.forward, rotationInput * rotateSpeed * Time.deltaTime);
         }
@@ -77,6 +75,14 @@ private void Awake()
 
     public override void Exit()
     {
+        if (boosting) {
+            StopBoosting(boostSpeedModifier);
+            scheduleBoost = true;
+        }
+        if (braking) {
+            StopBraking(brakeSpeedModifier);
+            scheduleBrake = true;   
+        }
     }
 
     public override void Rotate(float value)
@@ -88,12 +94,13 @@ private void Awake()
     {
         if (Time.time >= burstTimer && !boosting && !braking)
         {
-            Vector2 currentUp = transform.up;
+            //Vector2 currentUp = transform.up;
 
-            currentUp.x += currentUp.x > 0 ? 1 : -1;
-            currentUp.y += currentUp.y > 0 ? 1 : -1;
+            //currentUp.x += currentUp.x > 0 ? 1 : -1;
+            //currentUp.y += currentUp.y > 0 ? 1 : -1;
 
-            player.AddForce(currentUp*burstMultiplier, ForceMode2D.Impulse);
+            //player.AddForce(currentUp*burstMultiplier, ForceMode2D.Impulse);
+            force += burstMultiplier;
             burstTimer = burstCooldown + Time.time;
             damageTimer = burstDamageDuration + Time.time;
             burstDamage = true;

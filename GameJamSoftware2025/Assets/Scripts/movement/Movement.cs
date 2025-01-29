@@ -6,9 +6,6 @@ using UnityEngine.Rendering;
 
 public class Movement : MonoBehaviour
 {
-
-    [SerializeField] private Rigidbody2D player = default;
-
     [SerializeField] private List<TerrainMovement> terrains;
 
     [SerializeField] private Gauge boostGauge;
@@ -56,7 +53,6 @@ public class Movement : MonoBehaviour
     }
 
     public void Awake() {
-        TerrainMovement.player = player;
         TerrainMovement.boostGauge = boostGauge;
         currentTerrain = TM.CurrentTerrain;
     }

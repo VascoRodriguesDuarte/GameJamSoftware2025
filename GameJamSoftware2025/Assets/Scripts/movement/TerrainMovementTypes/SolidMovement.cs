@@ -23,14 +23,17 @@ public abstract class SolidMovement : TerrainMovement
     public override void Enter(Dictionary<String, Vector2> additional)
     {
         Debug.Log("Entered Solid");
-        Vector2 up = transform.up;
-        //Debug.Log(up.ToString());
+        Vector2 up = -transform.right;
+        Debug.Log(up.ToString());
         Vector2 normal = additional["normal"];
-        //Debug.Log(normal.ToString());
+        Debug.Log(normal.ToString());
         Vector2 force = Vector2.Reflect(up, normal);
-        //Debug.Log(force.ToString());
-        player.AddForce(force*reflectMultiplier, ForceMode2D.Impulse);
-        transform.Rotate(Vector3.forward, 180);
+        //Vector2 force = 2 * (up * normal) * normal - up;
+        Debug.Log(force.ToString());
+        //player.AddForce(force*reflectMultiplier, ForceMode2D.Impulse);
+        var angle = Vector2.Angle(-transform.right, normal);
+        Debug.Log(angle.ToString());
+        transform.Rotate(Vector3.forward, -angle*2);
     }
 
     public override void Exit()
