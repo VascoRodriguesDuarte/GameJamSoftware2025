@@ -30,7 +30,6 @@ public class TerrainManager : MonoBehaviour
     }
 
     private void ExecuteChangeTerrain(GameTerrain.MinorType entryType, Dictionary<String, Vector2> additional) {
-        Debug.Log("Changing Terrain to: " + entryType.ToString());
         if (InTunnel == 0) {
 
             player.ChangeTerrainMovement(entryType, additional);
