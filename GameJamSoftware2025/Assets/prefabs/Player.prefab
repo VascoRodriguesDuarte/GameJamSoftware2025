@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 25
+  maxSpeed: 30
   LingeringSpeedLoss: 0.1
   speedBoostLost: 0.003
   ForceSpeedLoss: 0.5
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 25
+  maxSpeed: 30
   LingeringSpeedLoss: 0.1
   speedBoostLost: 0.005
   ForceSpeedLoss: 0.5
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 25
+  maxSpeed: 30
   LingeringSpeedLoss: 0.1
   speedBoostLost: 0.005
   ForceSpeedLoss: 0.5
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 25
+  maxSpeed: 30
   LingeringSpeedLoss: 0.1
   speedBoostLost: 0.003
   ForceSpeedLoss: 0.5
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 35
+  maxSpeed: 40
   LingeringSpeedLoss: 0.04
   speedBoostLost: 0.003
   ForceSpeedLoss: 0.5
@@ -762,7 +762,7 @@ MonoBehaviour:
   burstCooldown: 2
   airSpeed: 2
   AirLingeringSpeedLoss: 0.2
-  onExitLoss: 0.2
+  onExitLoss: 0
   ManualRotationModifier: 0.1
 --- !u!114 &7996478692041568920
 MonoBehaviour:
