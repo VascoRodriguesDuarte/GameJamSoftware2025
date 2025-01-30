@@ -13,6 +13,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI characterNameLeft;
     public TextMeshProUGUI characterNameRight;
     public TextMeshProUGUI dialogueArea;
+    [SerializeField] private GameObject fadeCanvas;
+    [SerializeField] private CanvasGroup image;
+    [SerializeField] private float transitionSpeed;
+    [SerializeField] private float transitionTimeSpeed;
 
     public MainMenuManager menuManager;
  
@@ -90,6 +94,32 @@ public class DialogueManager : MonoBehaviour
  
     void EndDialogue()
     {
+        fadeCanvas.SetActive(true);
+        StartCoroutine(TitleDrop());
+    }
+
+    private IEnumerator TitleDrop()
+    {
+        // While the image is not fully visible, then it fades in.
+        while(image.alpha != 1f)
+        {
+            image.alpha += transitionSpeed;
+            AudioListener.volume -= transitionSpeed;
+
+            if(image.alpha > 1f)
+            {
+                image.alpha = 1f;
+            }
+            if(AudioListener.volume < 0f)
+            {
+                AudioListener.volume = 0f;
+            }
+
+            yield return new WaitForSeconds(transitionTimeSpeed);
+        }
+
+        yield return new WaitForSeconds(3f);
+
         menuManager.StartGame(2);
     }
 }
