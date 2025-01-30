@@ -5690,18 +5690,6 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 755778807}
-    - target: {fileID: 5625673162823761254, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 31.9652
-      objectReference: {fileID: 0}
-    - target: {fileID: 5625673162823761254, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5625673162823761254, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6790128515099147275, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       propertyPath: m_Time
       value: 0
@@ -5722,30 +5710,6 @@ PrefabInstance:
       propertyPath: controlsMenu
       value: 
       objectReference: {fileID: 106166832}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b522154ea3a7b049b9ca60ec3046013, type: 3}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Color.g
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513855508464200530, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3647059
-      objectReference: {fileID: 0}
     - target: {fileID: 9208137261270996805, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       propertyPath: m_Name
       value: Player

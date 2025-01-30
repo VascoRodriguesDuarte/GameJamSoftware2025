@@ -16,10 +16,10 @@ public class Gauge : MonoBehaviour
 
     [SerializeField, Range(0,1)] private float boostCooldownPercent = 0.10f;
 
-    float originalWidth;
+    [SerializeField] private float minPos = -320f;
     /*
-        originalWidth - 1
-        ?             - gaugeValue
+        minPosition - 1
+        ?           - 1-gaugeValue
     */
     private enum GaugeUpdateState {
         Increasing,
@@ -75,19 +75,24 @@ public class Gauge : MonoBehaviour
     }
 
     private void setVisuals() {
-        setVisualWidth();
+        setVisualLenght();
     }
 
-    private void setVisualWidth() {
+    /*private void setVisualWidth() {
         visual.sizeDelta = new Vector2(
             originalWidth*gaugeValue,
             visual.rect.height
             );
+    }*/
+    private void setVisualLenght() {
+        visual.anchoredPosition = new Vector2(
+            0f,
+            minPos * (1-gaugeValue)
+        );
     }
 
     void Awake() {
-        originalWidth = visual.rect.width;
-        setVisualWidth();
+        setVisualLenght();
     }
 
     public void GaugeUpdate() {
