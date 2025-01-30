@@ -14,6 +14,8 @@ public class AirMovement : TerrainMovement
 
     [SerializeField] private float onExitLoss = 1f;
 
+    [SerializeField] private float ManualRotationModifier = 0.1f;
+
     private float rotationValue;
     private float burstTimer = 0.0f;
     private float airSpeedPrivate = 1f;
@@ -23,8 +25,11 @@ public class AirMovement : TerrainMovement
 
     public override GameTerrain.MinorType type => GameTerrain.MinorType.Air;
 
-    private void InAir()
+    public override void Enter(Dictionary<String, Vector2> additional)
     {
+        if(boosting) {
+           boostGauge.SetStagnant();
+        }
         initialSpeed = previousSpeed;
         airTime = true;
         airSpeedPrivate = airSpeed;
@@ -36,32 +41,19 @@ public class AirMovement : TerrainMovement
         if(dot > 0f) {rotationValue = -rotateAirValue; Debug.Log("Right looking, go down");}
         else{rotationValue = rotateAirValue; Debug.Log("Left looking, go down");}
         ManageExtraSpeed();
-    }
-
-    private void OutAir()
-    {
-        airTime = false;
-        airSpeedPrivate = 1f;
-        rotationValue = 0f;
-        currentAdditionalSpeed -= onExitLoss;
-        lingeringSpeed = CurrentSpeed();
-        currentAdditionalSpeed += onExitLoss;
-    }
-
-    public override void Enter(Dictionary<String, Vector2> additional)
-    {
-        if(boosting) {
-           boostGauge.SetStagnant();
-        }
-        InAir();
-    }
+    }    
 
     public override void Exit()
     {
         if(boosting) {
             boostGauge.SetDecreasing();
         }
-        OutAir();
+        airTime = false;
+        airSpeedPrivate = 1f;
+        rotationValue = 0f;
+        currentAdditionalSpeed -= onExitLoss;
+        lingeringSpeed = CurrentSpeed();
+        currentAdditionalSpeed += onExitLoss;   
     }
 
     public override float CurrentSpeed() {
@@ -82,7 +74,7 @@ public class AirMovement : TerrainMovement
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
         }
 
-        transform.Rotate(0f, 0f, rotationValue * rotateSpeed * Time.deltaTime);    }
+        transform.Rotate(0f, 0f, ((rotationInput*ManualRotationModifier)+rotationValue) * rotateSpeed * Time.deltaTime);    }
 
     public override void Rotate(float value)
     {
@@ -144,5 +136,8 @@ public class AirMovement : TerrainMovement
     public override void StunBurst()
     {
         throw new System.NotImplementedException();
+    }
+
+    private void Start() {
     }
 }

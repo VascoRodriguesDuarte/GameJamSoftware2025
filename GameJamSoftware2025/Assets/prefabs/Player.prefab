@@ -620,6 +620,7 @@ MonoBehaviour:
   - {fileID: 2537399355273595583}
   boostGauge: {fileID: 6312974079622321923}
   TM: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &8628929310934503063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,18 +634,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 30
-  LingeringSpeedLoss: 0.08
+  maxSpeed: 25
+  LingeringSpeedLoss: 0.1
   speedBoostLost: 0.003
-  ForceSpeedLoss: 0.6
+  ForceSpeedLoss: 0.5
   burstMultiplier: 15
   burstDamageDuration: 0.5
-  rotateSpeed: 50
-  burstCooldown: 2
+  rotateSpeed: 100
+  burstCooldown: 1.5
   stunDuration: 1.5
-  boostSpeedModifier: 7
-  brakeSpeedModifier: 0.8
-  minEnemySpeed: 1
+  boostSpeedModifier: 5
+  brakeSpeedModifier: 0.6
+  minEnemySpeed: 7
 --- !u!114 &3224622897942176768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,18 +659,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 30
-  LingeringSpeedLoss: 0.08
-  speedBoostLost: 0.003
-  ForceSpeedLoss: 0.6
+  maxSpeed: 25
+  LingeringSpeedLoss: 0.1
+  speedBoostLost: 0.005
+  ForceSpeedLoss: 0.5
   burstMultiplier: 15
   burstDamageDuration: 0.5
-  rotateSpeed: 50
-  burstCooldown: 2
+  rotateSpeed: 100
+  burstCooldown: 1.5
   stunDuration: 1.5
-  boostSpeedModifier: 7
-  brakeSpeedModifier: 0.8
-  minEnemySpeed: 1
+  boostSpeedModifier: 5
+  brakeSpeedModifier: 0.6
+  minEnemySpeed: 7
 --- !u!114 &3004993062919738194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,18 +684,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 30
-  LingeringSpeedLoss: 0.08
-  speedBoostLost: 0.003
-  ForceSpeedLoss: 0.6
+  maxSpeed: 25
+  LingeringSpeedLoss: 0.1
+  speedBoostLost: 0.005
+  ForceSpeedLoss: 0.5
   burstMultiplier: 15
   burstDamageDuration: 0.5
-  rotateSpeed: 50
-  burstCooldown: 2
+  rotateSpeed: 100
+  burstCooldown: 1.5
   stunDuration: 1.5
-  boostSpeedModifier: 7
-  brakeSpeedModifier: 0.8
-  minEnemySpeed: 1
+  boostSpeedModifier: 5
+  brakeSpeedModifier: 0.6
+  minEnemySpeed: 7
 --- !u!114 &3350170081980473115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,18 +709,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 30
-  LingeringSpeedLoss: 0.08
+  maxSpeed: 25
+  LingeringSpeedLoss: 0.1
   speedBoostLost: 0.003
-  ForceSpeedLoss: 0.6
+  ForceSpeedLoss: 0.5
   burstMultiplier: 15
   burstDamageDuration: 0.5
-  rotateSpeed: 50
-  burstCooldown: 2
+  rotateSpeed: 100
+  burstCooldown: 1.5
   stunDuration: 1.5
-  boostSpeedModifier: 7
-  brakeSpeedModifier: 0.8
-  minEnemySpeed: 1
+  boostSpeedModifier: 5
+  brakeSpeedModifier: 0.6
+  minEnemySpeed: 7
 --- !u!114 &4582762978446211207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,10 +734,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 0
-  LingeringSpeedLoss: 0.08
+  maxSpeed: 30
+  LingeringSpeedLoss: 0.04
   speedBoostLost: 0.003
-  ForceSpeedLoss: 0.6
+  ForceSpeedLoss: 0.5
   reflectMultiplier: 5
 --- !u!114 &2537399355273595583
 MonoBehaviour:
@@ -751,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  maxSpeed: 40
+  maxSpeed: 35
   LingeringSpeedLoss: 0.04
   speedBoostLost: 0.003
   ForceSpeedLoss: 0.5
@@ -760,8 +761,9 @@ MonoBehaviour:
   rotateAirValue: 5
   burstCooldown: 2
   airSpeed: 2
-  AirLingeringSpeedLoss: 0.1
-  onExitLoss: 1
+  AirLingeringSpeedLoss: 0.2
+  onExitLoss: 0.2
+  ManualRotationModifier: 0.1
 --- !u!114 &7996478692041568920
 MonoBehaviour:
   m_ObjectHideFlags: 0

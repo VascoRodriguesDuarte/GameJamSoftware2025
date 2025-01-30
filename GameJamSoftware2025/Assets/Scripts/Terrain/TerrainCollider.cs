@@ -12,6 +12,9 @@ public class TerrainCollider : MonoBehaviour
     [SerializeField]
     private bool IsTunnel = false;
 
+    [SerializeField]
+    private bool IsWall = false;
+
     private TerrainManager TM;
 
     private Dictionary<String, Vector2> dict = new Dictionary<String, Vector2>();
@@ -34,9 +37,9 @@ public class TerrainCollider : MonoBehaviour
                 dict["normal"] = normal;
                 //Debug.Log("normal: " + normal.ToString());
             }
-            TM.ForceChangeTerrain(type, dict);
+            TM.ChangeTerrain(type, true, IsTunnel, dict);
         }
-    } 
+    }
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player") && GameTerrain.GetMajorType(type) == GameTerrain.MajorType.Air && !IsTunnel) {
@@ -60,7 +63,7 @@ public class TerrainCollider : MonoBehaviour
     }
 
     private void Start() {
-        if (!IsTunnel) {
+        if (!IsTunnel && !IsWall) {
             TM = transform.parent.GetComponent<TerrainManager>();
         } else {
             TM = transform.parent.parent.GetComponent<TerrainManager>();   

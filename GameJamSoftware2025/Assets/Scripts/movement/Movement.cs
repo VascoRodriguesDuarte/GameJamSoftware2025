@@ -16,10 +16,13 @@ public class Movement : MonoBehaviour
     private GameTerrain.MinorType currentTerrain;
 
     public void ChangeTerrainMovement(GameTerrain.MinorType type, Dictionary<String, Vector2> additional) {
-        //Debug.Log("Changing terrain to " + type.ToString());
-        getCurrentMovement().Exit();
-        currentTerrain = type;
-        getCurrentMovement().Enter(additional);
+        if (type != currentTerrain) {
+            Debug.Log("Changing terrain to " + type.ToString() + " from " + currentTerrain.ToString());
+
+            getCurrentMovement().Exit();
+            currentTerrain = type;
+            getCurrentMovement().Enter(additional);
+        }
     }
 
     public GameTerrain.MinorType GetCurrentTerrain() {

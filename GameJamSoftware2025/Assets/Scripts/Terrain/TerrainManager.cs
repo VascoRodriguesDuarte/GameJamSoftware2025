@@ -10,7 +10,7 @@ public class TerrainManager : MonoBehaviour
 
     public GameTerrain.MinorType CurrentTerrain {get;private set;}
 
-[SerializeField]
+    [SerializeField]
     private List<GameTerrain.MinorType> list;
 
     private int getOrder(GameTerrain.MinorType type) {
@@ -30,8 +30,7 @@ public class TerrainManager : MonoBehaviour
     }
 
     private void ExecuteChangeTerrain(GameTerrain.MinorType entryType, Dictionary<String, Vector2> additional) {
-        if (InTunnel == 0) {
-
+        if (InTunnel == 0 || GameTerrain.GetMajorType(entryType) == GameTerrain.MajorType.Solid) {
             player.ChangeTerrainMovement(entryType, additional);
         }
         //Debug.Log(entryType.ToString());

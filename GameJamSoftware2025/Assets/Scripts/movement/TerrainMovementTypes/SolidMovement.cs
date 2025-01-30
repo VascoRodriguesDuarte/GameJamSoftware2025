@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class SolidMovement : TerrainMovement
 {
     [SerializeField] private float reflectMultiplier = 5;
+
+    private float rotation;
     public override void Boost(float value)
     {
         throw new System.NotImplementedException();
@@ -33,12 +35,13 @@ public abstract class SolidMovement : TerrainMovement
         //player.AddForce(force*reflectMultiplier, ForceMode2D.Impulse);
         var angle = Vector2.Angle(-transform.right, normal);
         Debug.Log(angle.ToString());
+        rotation = -angle*2;
         transform.Rotate(Vector3.forward, -angle*2);
     }
 
     public override void Exit()
     {
-
+        Debug.Log("Exited Solid");
     }
 
     public override void ManageExtraSpeed()
@@ -63,6 +66,5 @@ public abstract class SolidMovement : TerrainMovement
 
     public override void ToUpdate()
     {
-
     }
 }
