@@ -293,8 +293,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPACE TO CONTINUE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
+  m_sharedMaterial: {fileID: -5041628421892127776, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -581,8 +581,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
+  m_sharedMaterial: {fileID: -5041628421892127776, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -771,112 +771,74 @@ MonoBehaviour:
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.05
-      line: Have you heard of the legend of the Fair and Dignified Tooth Fairy?
+      line: HAVE YOU HEARD OF THE LEGEND OF THE FAIR AND DIGNIFIED TOOTH FAIRY?
     - character:
         name: Narrator
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.05
-      line: All across the world, children hide their tiny fallen teeth under their
-        pillows.
+      line: ALL ACROSS THE WORLD, CHILDREN PLACE THEIR TINY FALLEN TEETH UNDER THEIR
+        PILLOWS.
     - character:
         name: Narrator
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.05
-      line: 'They do so in hopes that the Gracious and Benevolent Tooth Fairy will
-        reward their offering with yet another offering of her own: health.'
+      line: THEY DO SO IN THE HOPES THAT THE GRACIOUS AND BENEVOLENT TOOTH FAIRY
+        WILL REWARD THEIR OFFERING WITH HER BLESSING.
     - character:
         name: Narrator
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.05
-      line: "And for generations on end, it really was like this\u2026 Until\u2026"
+      line: AND FOR GENERATIONS ON END, IT REALLY WAS LIKE THIS... UNTIL...
     - character:
         name: T. Fairy
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.03
-      line: "I\u2019ve been defiled long enough!"
+      line: 'I''VE BENN DEFILED LONG ENOUGH! FOR A THOUSAND YEARS THE LITLE HUMANS
+        UPHELP THEIR END OF THE BARGAIN.... '
     - character:
         name: T. Fairy
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.03
-      line: For 1000 years... For 1000 years the little humans upheld their end of
-        the bargain... until now.
+      line: BUT FOR THE PAST TWO DECADES, OUR CONTRACT HAS BEEN DEFILED! THEIR OATHS
+        BROKEN WITH EVERY OFFERING FILLED WITH SUGAR, BACTERIA AND FILTH!
     - character:
         name: T. Fairy
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.03
-      line: Those dirty little demons, for the past two decades, have been offering
-        me their disgustingly destroyed tusks!
-    - character:
-        name: T. Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0.03
-      line: Filled with sugar, bacteria and other filth. I can't accept this disrespect
-        anymore!
-    - character:
-        name: T. Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0.03
-      line: "I\u2019ll make those arrogant pests pay once and for all!"
-    - character:
-        name: ???
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 1
-        textSpeed: 0.2
-      line: ...
+      line: I CAN'T ACCEPT THIS DISRESPECT ANYMORE! I'LL MAKE THOSE ARROGANT PESTS
+        PAY ONCE AND FOR ALL!
     - character:
         name: T.Fairy
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.03
-      line: Welcome back Drilly, my liege! It's been a while since I last summoned
-        you. How have you been?
+      line: COME FORTH MY MOST LOYAL SERVANT!
+    - character:
+        name: T. Fairy
+        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
+        rightSide: 0
+        textSpeed: 0.03
+      line: ...
     - character:
         name: Drilly
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 1
         textSpeed: 0.2
-      line: ...
+      line: I SUMMON THEE ONCE MORE FOR A MOST DIFFICULT TASKI YOU SHALL GO AND WAGE
+        WAR ON THOSE LITLE IMPS!
     - character:
         name: T.Fairy
         icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
         rightSide: 0
         textSpeed: 0.03
-      line: You don't have to tell me, I don't care anyway.
-    - character:
-        name: T.Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0.03
-      line: Back on topic, we have been defiled. Our sacred oath has been broken!
-    - character:
-        name: T.Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0
-      line: For 1000 years... For 1000 years the little humans upheld their end of
-        the bargain... until now. Those dirty little demons, for the past two decades,
-        have been offering me their disgustingly...
-    - character:
-        name: T.Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0.1
-      line: A-N-Y-W-A-Y!
-    - character:
-        name: T.Fairy
-        icon: {fileID: 5305378489151872859, guid: 0ceb46029daa127458196145c479e9e4, type: 3}
-        rightSide: 0
-        textSpeed: 0.02
-      line: 'Drilly, I command you to wage war on the filthy Imps! Tear down whatever
-        healthy teeth they still have! '
+      line: IF I CANNOT HAVE PERFECTLY HEALTHY TEETH, NO ONE CAN!!! GIVE OUR ENEMIES
+        THE MOST AGONIZING PAIN OF ...
   delayBeforeStart: 1.9
   playerInput: {fileID: 679956066}
 --- !u!114 &679956061
@@ -1234,8 +1196,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
+  m_sharedMaterial: {fileID: -5041628421892127776, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1855,8 +1817,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
+  m_sharedMaterial: {fileID: -5041628421892127776, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
