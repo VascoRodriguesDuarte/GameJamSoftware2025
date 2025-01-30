@@ -25697,24 +25697,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe134da420c2bb34d9a4fb7915264c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryUI: {fileID: 0}
+  victoryUI: {fileID: 2023021186}
   pauseController: {fileID: 423578168}
   scoreManager: {fileID: 423578169}
   timerText: {fileID: 461140007}
-  scoreText: {fileID: 0}
-  scoreNumber: {fileID: 0}
-  victoryTimerText: {fileID: 0}
-  victoryScoreNumber: {fileID: 0}
+  scoreText: {fileID: 1901925169}
+  scoreNumber: {fileID: 936165861}
+  victoryTimerText: {fileID: 1891938676}
+  victoryScoreNumber: {fileID: 1560356310}
   maxLevelSecondsTimer: 90
   timeScore: 200
   pauseManager: {fileID: 423578167}
   scoreRanks: 00000000b0360000803e000050460000204e0000
   ranks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1908242294}
+  - {fileID: 835914140}
+  - {fileID: 56754947}
+  - {fileID: 1501134697}
+  - {fileID: 933160454}
 --- !u!4 &1290923849
 Transform:
   m_ObjectHideFlags: 0
