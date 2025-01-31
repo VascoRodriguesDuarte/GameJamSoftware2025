@@ -10748,10 +10748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad38a5d98c26c3fafb8eb47b1a18fb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tunnelPrefab: {fileID: 7060542122385913240, guid: 3955df22cfd0414dbad634ad0c8bbee4, type: 3}
+  tunnelPrefab: {fileID: 7060542122385913240, guid: 9d5745cbbdca40a82b2bc99b2f941a04, type: 3}
   player: {fileID: 423578159}
   TM: {fileID: 8777459620112111145}
-  maxPieces: 50
+  maxPieces: 150
   lingering: 1
   TicksPerSecond: 50
 --- !u!1001 &611008173
@@ -22887,7 +22887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SCORE
+  m_text: 'SCORE:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
   m_sharedMaterial: {fileID: -5041628421892127776, guid: d8110c6a945410045838d62f5a4e9dc7, type: 2}
