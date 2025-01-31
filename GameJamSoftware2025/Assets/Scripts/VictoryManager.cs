@@ -12,6 +12,7 @@ public class VictoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreNumber;
     [SerializeField] private TextMeshProUGUI victoryTimerText;
     [SerializeField] private TextMeshProUGUI victoryScoreNumber;
+    [SerializeField] private TextMeshProUGUI enemiesLeft;
     [SerializeField] private int maxLevelSecondsTimer;
     [SerializeField] private int timeScore;
     [SerializeField] private PauseManager pauseManager;
@@ -23,6 +24,7 @@ public class VictoryManager : MonoBehaviour
 
     private void Start()
     {
+        UpdateEnemiesLeft();
         StartTimer();
     }
 
@@ -45,6 +47,8 @@ public class VictoryManager : MonoBehaviour
             GiveRank();
             victoryUI.SetActive(true);
             pauseController.Pause(true,true);
+        } else {
+            UpdateEnemiesLeft();
         }
     }
 
@@ -103,5 +107,9 @@ public class VictoryManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
         }
+    }
+
+    private void UpdateEnemiesLeft() {
+        enemiesLeft.text = transform.childCount.ToString();
     }
 }
