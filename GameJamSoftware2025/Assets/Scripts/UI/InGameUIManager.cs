@@ -21,15 +21,10 @@ public class InGameUIManager : MonoBehaviour
         while(image.alpha != 1f)
         {
             image.alpha += transitionSpeed;
-            AudioListener.volume -= transitionSpeed;
 
             if(image.alpha > 1f)
             {
                 image.alpha = 1f;
-            }
-            if(AudioListener.volume < 0f)
-            {
-                AudioListener.volume = 0f;
             }
 
             yield return new WaitForSeconds(transitionTimeSpeed);
