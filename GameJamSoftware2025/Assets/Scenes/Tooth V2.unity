@@ -3985,6 +3985,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1453586038854050241, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4865202550144509836, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       propertyPath: scoreText
       value: 
@@ -12730,6 +12734,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 423578170}
+    - target: {fileID: 862638172427374158, guid: 20206a5ce317c22469745d848ee937db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 862638172427374158, guid: 20206a5ce317c22469745d848ee937db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1542895904851121548, guid: 20206a5ce317c22469745d848ee937db, type: 3}
       propertyPath: m_Name
       value: EnemyBurst (6)
@@ -32522,14 +32534,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 423578170}
-    - target: {fileID: 6986661104693711947, guid: 707ad44d91119a841a2ea0c2e8f26ba4, type: 3}
-      propertyPath: moveUnits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986661104693711947, guid: 707ad44d91119a841a2ea0c2e8f26ba4, type: 3}
-      propertyPath: xMovement
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
