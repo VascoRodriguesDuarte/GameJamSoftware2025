@@ -16,13 +16,17 @@ public class VisualTunnel : MonoBehaviour
 
     [SerializeField, Range(50,300)]
     private int maxPieces = 50;
+
+    [SerializeField]
+    private bool lingering = true;
     private Transform[] pieces;
 
     private int i = 0;
 
-
     [SerializeField, Range(5,200)]
     public int TicksPerSecond = 50;
+
+    private GameObject visualTunnel;
     private float dur;
 
     private Vector3 Scale;
@@ -35,7 +39,7 @@ public class VisualTunnel : MonoBehaviour
         {
             _t -= dur;
 
-            if (CanDig()) {
+            if (CanDig() && CanCreate()) {
                 createPiece();
             }
         }
@@ -46,7 +50,30 @@ public class VisualTunnel : MonoBehaviour
         return GameTerrain.GetMajorType(TM.CurrentTerrain) == GameTerrain.MajorType.Land;
     }
 
-private float lastSpeed ;
+    private bool CanCreate() {
+        if (!lingering) {
+            return true;
+        } else {
+            if (player.GetCurentSpeed() != 0) {
+                visualTunnel.SetActive(true);
+                return true;
+            } else {
+                visualTunnel.SetActive(false);
+                var idx = 0;
+                foreach (Transform y in pieces) {
+                    if (pieces[idx] != null) {
+                        Destroy(pieces[idx].gameObject);
+                    }
+                    pieces[idx] = null;
+                    idx++;
+                }
+                passthrough = false;
+                return false;
+            }
+        }
+    }
+
+    private float lastSpeed;
     private void createPiece() {
         Transform piece = getOrInstantiatePiece();
 
@@ -54,7 +81,6 @@ private float lastSpeed ;
 
         var speed = player.GetCurentSpeed();
         float animSpeed = player.GetCurentSpeed()/player.getCurrentMovement().defaultSpeed;
-;
         if (lastSpeed != speed) {
             foreach (Transform y in pieces) {
                 var animator = y.GetChild(0).GetComponent<Animator>();
@@ -73,7 +99,7 @@ private float lastSpeed ;
         }        
         piece.position = p.position + p.up*0.80f;
         piece.rotation = p.rotation;
-        piece.SetParent(transform, true);
+        piece.SetParent(visualTunnel.transform, true);
     }
 
     private void addPieceToList(Transform piece) {
@@ -107,6 +133,11 @@ private float lastSpeed ;
         dur = 1f / TicksPerSecond;
         Scale = player.getTransform().localScale;
         lastSpeed = player.GetCurentSpeed();
+    }
+
+    private void Start() {
+        visualTunnel = new GameObject("VisualTunnel");
+        visualTunnel.transform.SetParent(transform, true);
     }
 
 }

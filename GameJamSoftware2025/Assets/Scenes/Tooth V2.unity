@@ -4037,6 +4037,14 @@ PrefabInstance:
       propertyPath: TM
       value: 
       objectReference: {fileID: 1280022349}
+    - target: {fileID: 6605991405449311731, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
+      propertyPath: m_Name
+      value: Visual Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605991405449311731, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7419255464616528189, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -4054,7 +4062,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6605991405449311731, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4095483077825246062, guid: c8908cdf2807a83c7b79f1dd2b0b2b17, type: 3}
       insertIndex: -1
@@ -11618,10 +11627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad38a5d98c26c3fafb8eb47b1a18fb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tunnelPrefab: {fileID: 7060542122385913240, guid: 3955df22cfd0414dbad634ad0c8bbee4, type: 3}
+  tunnelPrefab: {fileID: 7060542122385913240, guid: 9d5745cbbdca40a82b2bc99b2f941a04, type: 3}
   player: {fileID: 423578159}
   TM: {fileID: 1280022349}
   maxPieces: 50
+  lingering: 1
   TicksPerSecond: 50
 --- !u!1001 &609874491
 PrefabInstance:

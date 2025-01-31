@@ -20,7 +20,6 @@ public abstract class LandMovement : TerrainMovement
 
     private float stunTimer = 0.0f;
 
-    private bool stun = false;
 
     private bool burstDamage = false;
 

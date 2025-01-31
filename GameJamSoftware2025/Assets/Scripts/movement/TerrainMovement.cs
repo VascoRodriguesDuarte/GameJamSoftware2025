@@ -36,6 +36,9 @@ abstract public class TerrainMovement: MonoBehaviour
 
     protected static float previousSpeed = 0f;
 
+    protected bool stun = false;
+
+
     protected void StopBoosting(float modifier) {
         if (boosting) {
             boostGauge.SetIncreasing();
@@ -102,7 +105,12 @@ abstract public class TerrainMovement: MonoBehaviour
     }
 
     virtual public float CurrentSpeed() {
-        return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*(extraSpeed+brakeModifier), 0, maxSpeed);
+
+        if (!stun) {
+            return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*(extraSpeed+brakeModifier), 0, maxSpeed);
+        } else {
+            return 0f;
+        }
     }
     abstract public void ToUpdate();
     abstract public void Enter(Dictionary<String, Vector2> additional);
