@@ -26,6 +26,7 @@ public class ResourceCollider : MonoBehaviour
                 player.ChainUp();
                 Debug.Log("BackResource!");
             }
+            AudioSource.PlayClipAtPoint(gameObject.GetComponent<AudioSource>().clip, gameObject.transform.position);
             LeanTween.scale(gameObject,new Vector3(0,0,0), 0.2f);
             Destroy(gameObject,0.2f);
         }

@@ -32,7 +32,7 @@ public class ExplodetEnemyExplosion : MonoBehaviour
                 {
                     player.ApplyExplosionSlow(slowValue);
                 }
-
+                AudioSource.PlayClipAtPoint(gameObject.GetComponent<AudioSource>().clip, gameObject.transform.position);
                 explosionSet = false;
 
             }
