@@ -28,6 +28,7 @@ public class EnemyCollider : MonoBehaviour
             }
             
             AudioSource.PlayClipAtPoint(gameObject.GetComponent<AudioSource>().clip, gameObject.transform.position);
+            gameObject.GetComponent<ParticleSystem>().Play();
             LeanTween.scale(gameObject,new Vector3(0,0,0), 0.2f);
             Destroy(gameObject,0.2f);
         }

@@ -4573,6 +4573,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBurst (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2903383081962138498, guid: 20206a5ce317c22469745d848ee937db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903383081962138498, guid: 20206a5ce317c22469745d848ee937db, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7324697055125926176, guid: 20206a5ce317c22469745d848ee937db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.91
