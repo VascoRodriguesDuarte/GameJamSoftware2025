@@ -56,9 +56,10 @@ public class AirMovement : TerrainMovement
         currentAdditionalSpeed += onExitLoss;   
     }
 
-    public override float CurrentSpeed() {
+    public override float CurrentSpeed(bool pause = false) {
 
         initialSpeed = ReduceLingeringSpeed(initialSpeed, AirLingeringSpeedLoss);
+        
         return Mathf.Clamp(Mathf.Max((defaultSpeed+currentAdditionalSpeed) * airSpeedPrivate, initialSpeed), 0, maxSpeed);
     }
 

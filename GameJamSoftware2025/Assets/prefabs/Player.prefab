@@ -5487,6 +5487,7 @@ MonoBehaviour:
   boostGauge: {fileID: 6312974079622321923}
   TM: {fileID: 0}
   animator: {fileID: 10075646338659862}
+  pauseManager: {fileID: 2658805641638393587}
 --- !u!114 &8628929310934503063
 MonoBehaviour:
   m_ObjectHideFlags: 0

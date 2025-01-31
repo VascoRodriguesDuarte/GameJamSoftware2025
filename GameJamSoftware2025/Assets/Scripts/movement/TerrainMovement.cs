@@ -104,9 +104,9 @@ abstract public class TerrainMovement: MonoBehaviour
         return previousSpeed;
     }
 
-    virtual public float CurrentSpeed() {
+    virtual public float CurrentSpeed(bool paused = false) {
 
-        if (!stun) {
+        if (!stun && !paused) {
             return Mathf.Clamp(Mathf.Max(defaultSpeed + currentAdditionalSpeed + force + boostSpeed, lingeringSpeed + force + boostSpeed)*(extraSpeed+brakeModifier), 0, maxSpeed);
         } else {
             return 0f;
