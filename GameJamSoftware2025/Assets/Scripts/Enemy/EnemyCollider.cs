@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyCollider : MonoBehaviour
 {
+
     [SerializeField] ResourceManager player;
     [SerializeField] private enemyType enemy;
     
@@ -25,8 +26,10 @@ public class EnemyCollider : MonoBehaviour
                 Debug.Log("Contact Explode Enemy");
                 player.ExplodeEnemy();
             }
-
-            Destroy(gameObject);
+            
+            AudioSource.PlayClipAtPoint(gameObject.GetComponent<AudioSource>().clip, gameObject.transform.position);
+            LeanTween.scale(gameObject,new Vector3(0,0,0), 0.2f);
+            Destroy(gameObject,0.2f);
         }
     
     }
